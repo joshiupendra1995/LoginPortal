@@ -3,35 +3,44 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HelloWorldComponent } from './hello-world/hello-world.component';
-import { MenuComponent } from './menu/menu.component';
-import { LoginComponent } from './login/login.component';
 
-import { FormsModule } from '@angular/forms';
-import { LogoutComponent } from './logout/logout.component';
-import { HttpInterceptorService } from './httpInterceptor.service';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { RegisterComponent } from './register/register.component';
+import { UserListComponent } from './user-list/user-list.component';
+import {DataTablesModule} from 'angular-datatables';
+import { LoginComponent } from './login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './navbar/navbar.component'; 
+import {MatToolbarModule,MatButtonModule,MatIconModule} from '@angular/material';
+import { ChartsModule } from 'ng2-charts';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloWorldComponent,
-    MenuComponent,
+    RegisterComponent,
+    UserListComponent,
     LoginComponent,
-    LogoutComponent
+    NavbarComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    DataTablesModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    ChartsModule,
+    ReactiveFormsModule
   ],
   providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpInterceptorService,
-      multi: true
-    }
+  
   ],
   bootstrap: [AppComponent]
 })

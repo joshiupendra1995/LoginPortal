@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<div class="chart-wrapper">
+    <canvas baseChart 
+    style="position: left"
+    height="20vh" width="200vw"
+    [data]="pieChartData" 
+    [labels]="pieChartLabels" 
+    [chartType]="pieChartType"
+    [options]="pieChartOptions"
+    [plugins]="pieChartPlugins"
+    [legend]="pieChartLegend">
+  </canvas>
+</div>

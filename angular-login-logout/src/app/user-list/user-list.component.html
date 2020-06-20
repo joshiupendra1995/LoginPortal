@@ -1,0 +1,25 @@
+<div class="container">
+<table [dtOptions]="dtOptions"  datatable class="row-border hover">
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Email Id</th>
+            <th>Action</th>
+          </tr>
+    </thead>
+    
+    <tbody>
+        <tr *ngFor="let user of users | async">
+            <td>{{user.username}}</td>
+            <td>{{user.password}}</td>
+            <td>{{user.emailId}}</td>
+            <td><button (click)="deleteUser(user.emailId)" class="del">Delete</button></td>
+        </tr>
+    <tbody>
+</table>
+</div>
+
+<div class="container signin">
+    <p>Not Registered Yet? Please register now <a [routerLink]="['/register']">Click Here</a></p>
+  </div>

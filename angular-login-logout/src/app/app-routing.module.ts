@@ -1,13 +1,19 @@
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HelloWorldComponent } from './hello-world/hello-world.component';
-import { LoginComponent } from './login/login.component';
+import { UserListComponent } from './user-list/user-list.component';
+import { RegisterComponent } from './register/register.component';
+
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent},
-  {path: '', component: LoginComponent},
-  {path: 'hello-world', component: HelloWorldComponent},
-  {path: 'logout', component: LoginComponent},
+  {path:'',component:DashboardComponent},
+  {path:'navbar',component:NavbarComponent},
+  {path:'login',component:LoginComponent},
+  {path:'users',component:UserListComponent},
+  {path:'register',component:RegisterComponent},
+  
 ];
 
 @NgModule({
