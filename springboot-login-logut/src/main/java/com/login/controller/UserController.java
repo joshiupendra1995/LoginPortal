@@ -29,9 +29,10 @@ public class UserController {
 	 *
 	 * @param user the user
 	 * @return the user
+	 * @throws Exception 
 	 */
 	@PostMapping("/register")
-	public User registerUser(@RequestBody User user) {
+	public User registerUser(@RequestBody User user) throws Exception {
 
 		return userService.registerUser(user);
 
@@ -48,7 +49,7 @@ public class UserController {
 	}
 
 	@PutMapping("/login/username/{username}/password/{password}")
-	public User verifyUser(@PathVariable String username, @PathVariable String password) {
+	public User verifyUser(@PathVariable String username, @PathVariable String password) throws Exception {
 
 		return userService.verifyUser(username, password);
 
@@ -60,7 +61,7 @@ public class UserController {
 	}
 
 	@GetMapping("/validateOTP/{username}/{password}/{otp}")
-	public boolean validateOTP(@PathVariable String username, @PathVariable String password, @PathVariable String otp) {
+	public boolean validateOTP(@PathVariable String username, @PathVariable String password, @PathVariable String otp) throws Exception {
 		return userService.validateUser(username, password, otp);
 
 	}
